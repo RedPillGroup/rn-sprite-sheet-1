@@ -5,7 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-#import <React/RCTBridgeDelegate.h>
+#if __has_include(<React/RCTBridgeModule.h>)
+#import <React/RCTBridgeModule.h>
+#else
+#import "RCTBridgeModule.h"
+#endif
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate>
